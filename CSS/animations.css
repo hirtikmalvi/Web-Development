@@ -1,0 +1,55 @@
+#id1 {
+    height: 100px;
+    width: 100px;
+    margin: 30px;
+    position: absolute;
+    background-color: turquoise;
+    /* animation-name: squareBoxAnimation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal; */
+    /* Single Line Representation */
+    animation: squareBoxAnimation 2s linear 1s infinite normal;
+}
+
+/* 1st Way... */
+/* @keyframes squareBoxAnimation {
+    from {
+        background-color: turquoise;
+        left: 0px;
+    }
+
+    to {
+        background-color: tomato;
+        left: 300px;
+    }
+} */
+
+/* Another Way of Animation determinig point of process as percentage... */
+@keyframes squareBoxAnimation {
+    0% {
+        background-color: turquoise;
+        left: 0px;
+    }
+
+    25% {
+        background-color: bisque;
+        left: 75px;
+    }
+
+    50% {
+        background-color: yellow;
+        left: 150px;
+    }
+
+    75% {
+        background-color:darkorange;
+        left: 225px;
+    }
+
+    100% {
+        background-color: red;
+        left: 300px;
+    }
+}

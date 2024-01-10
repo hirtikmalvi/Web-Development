@@ -1,0 +1,76 @@
+#div1 {
+    margin: 150px;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+button {
+    background-color: aqua;
+}
+
+/* Transition: */
+/* #div1:hover {
+    background-color: orange;
+    transition-duration: 2s;
+    transition-property: all;
+    transition-delay: 10ms;
+    transition-timing-function:linear;
+    transition: all 1s ease-out 0s;
+                TP  TDur  TTF   TDelay
+} */
+
+/* Transform Start form here! */
+
+
+/* Two ways to do ROTATE an item. */
+/* #div1:hover {
+    background-color: orange;
+    transform: rotate(45deg);
+    rotate:z 90deg;
+    transform: rotateX(60deg);
+    transition-duration: 2s;
+} */
+
+
+/* SCALE: Makes the item bigger as per the value provided.(Try one by one) */
+/* #div1:hover {
+    background-color: orange;
+    transition-duration: 2s;
+    transform: scale(2); 
+    transform: scale(1.5, 2.5);
+    transform: scaleX(2);
+    transform: scaleY(2);
+} */
+
+
+/* TRANSLATE: Moves the item in the direction(X or Y-axis) on the provided translate() value */
+/* #div1:hover {
+    background-color: orange;
+    transition-duration: 2s;
+    transform: translate(200px);
+    transform: translate(200px,100px);
+    transform: translateX(100px);
+    transform: translateY(200px);
+} */
+
+
+/* SKEW: strech the item from the corners to the degree on the provided skew() value */
+/* #div1:hover {
+    background-color: orange;
+    transition-duration: 2s;
+    transform: skew(60deg);
+} */
+
+
+button:hover {
+    background-color: yellow;
+    cursor: pointer;
+    transition-duration: 2s;
+}
