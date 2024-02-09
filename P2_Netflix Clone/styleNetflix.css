@@ -27,3 +27,72 @@ nav {
     align-items: center;
     padding: 10px 0;
 }
+
+.logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+nav button {
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.languageButton {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+}
+
+.languageButton img {
+    width: 10px;
+    margin-left: 10px;
+}
+
+.headerContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 100px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.headerContent h1 {
+    font-weight: 600;
+    max-width: 650px;
+    font-size: 60px;
+    line-height: 70px;
+}
+
+.headerContent h3 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.emailSignUp {
+    /* background: #fff; */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.emailSignUp input {
+    flex: 1;
+    border: 1px solid white;
+    outline: 0;
+    margin-left: 20px;
+    background: transparent;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
