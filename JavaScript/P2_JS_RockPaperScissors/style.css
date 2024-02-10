@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #D2FDFF;
+}
+
+h1 {
+    height: 5rem;
+    background-color: #1D3354;
+    color: #D2FDFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.choice {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgb(0, 0, 0);
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+}
+
+.scoreBoard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    gap: 5rem;
+    text-align: center;
+}
+
+#userScore,
+#computerScore {
+    font-size: 4rem;
+}
+
+.messageContainer {
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#message {
+    background-color: #1D3354;
+    color: #D2FDFF;
+    font-size: 1.5rem;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.secondMessage {
+    margin-top: 1rem;
+    background-color: #1D3354;
+    color: #D2FDFF;
+    font-size: 1.5rem;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.hide {
+    display: none;
+}
+
+#message:hover {
+    cursor: pointer;
+}
