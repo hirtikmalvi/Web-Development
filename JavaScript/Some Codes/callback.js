@@ -22,6 +22,7 @@ function getData(dataId, getNextData) { //getNextData as callback
 //     getData(2);
 // });
 
+//Callback Hell
 getData(1, () => {
     getData(2, () => {
         getData(3);
