@@ -1,31 +1,38 @@
+let = BASE_URL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+let apiId = "cf1cfe2e28cf096dbbbf1e889d7643fe";
 let searchBtn = document.querySelector(".search button");
-let = BASE_URL = "https://api.weatherapi.com/v1/current.json?key=4db3305650dc4da78b9192818240103&q=";
-let XURL = "https://api.weatherapi.com/v1/current.json?key=4db3305650dc4da78b9192818240103&q=";
+let searchBox = document.querySelector(".search input");
+let weatehrIconList = ["clear", "drizzle", "humidity", "mist", "clouds", "rain", "snow"];
 
-async function temp(city) {
-    const response = await fetch(XURL + city + "&aqi=yes");
-    var data = await response.json();
-    console.log(data.current.condition.text.toLowerCase());
-}
-
-
-searchBtn.addEventListener("click", (element) => {
-    let parentEle = element.target.parentElement;
-    let cityName = parentEle.querySelector("input").value;
-    checkWeather(cityName);
-});
 
 async function checkWeather(city) {
-    const response = await fetch(BASE_URL + city + "&aqi=yes");
-    var data = await response.json();
-    console.log("City Name1:", data.location.name);
-    document.querySelector(".city").innerText = data.location.name;
-    document.querySelector(".temp").innerText = data.current.temp_c + "°C";
-    document.querySelector(".humidity").innerText = data.current.humidity + "%";
-    document.querySelector(".wind").innerText = data.current.wind_kph + "km/h";
+    const response = await fetch(BASE_URL + city + `&appid=${apiId} `);
 
-    let imgSrc = "images/mist.png";
-    let weatherCond = data.current.condition.text.toLowerCase();
-    console.log(weatherCond);
-    document.querySelector(".weatherIcon").src = `images/${weatherCond}.png`;
+    if (response.status == 404) {
+        document.querySelector(".error").classList.remove("hide");
+        document.querySelector(".weather").classList.add("hide");
+    }
+    else {
+        var data = await response.json();
+        console.log("City Name1:", data.name);
+        document.querySelector(".city").innerText = data.name;
+        document.querySelector(".temp").innerText = Math.round(data.main.temp) + "°C";
+        document.querySelector(".humidity").innerText = data.main.humidity + "%";
+        document.querySelector(".wind").innerText = data.wind.speed + "km/h";
+
+        document.querySelector(".weatherIcon").src = "images/mist.png"; //Default
+        let weatherCond = data.weather[0].main.toLowerCase();
+        console.log(weatherCond);
+        for (let icon of weatehrIconList) {
+            if (icon === weatherCond) {
+                document.querySelector(".weatherIcon").src = `images/${icon}.png`;
+            }
+        }
+        document.querySelector(".error").classList.add("hide");
+        document.querySelector(".weather").classList.remove("hide");
+    }
 }
+
+searchBtn.addEventListener("click", (element) => {
+    checkWeather(searchBox.value);
+});
