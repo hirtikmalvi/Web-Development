@@ -5,28 +5,249 @@
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-    font-weight: 00;
+    /* font-weight: 700; */
+}
+
+body {
+    background-color: black;
+    color: white;
 }
 
 .left {
     width: 25vw;
     padding: 10px;
+
 }
 
-.rigth {
+.right {
+    margin: 15px 0;
+    margin-right: 10px;
     width: 75vw;
+    position: relative;
 }
 
 .home ul li {
-    width: 14px;
+    width: 25px;
+    font-size: 14px;
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 15px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.heading {
+    width: 100%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 23px 14px;
+    font-weight: bold;
+}
+
+.library {
+    min-height: 75vh;
+    position: relative;
+}
+
+.heading img {
+    width: 25px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: grey;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.right .header .nav img {
+    width: 20px;
+}
+
+.header {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #101010;
+}
+
+/* Immediate children of header class(or any class) is denoted by "> *" */
+.header>* {
+    padding: 25px;
+}
+
+.spotifyPlaylists {
+    padding: 10px;
+    background-color: rgba(33, 34, 33, 0.575);
+}
+
+.spotifyPlaylists h1 {
+    margin-left: 10px;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    /* gap: 20px; */
+    max-height: 70vh;
+    overflow: scroll;
+}
+
+.card {
+    width: 200px;
+    background-color: #0b0b0b52;
+    padding: 15px 15px 15px 15px;
+    cursor: pointer;
+    position: relative;
+    margin: 5px 5px;
+}
+
+.card img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.card h2,
+p {
     padding-top: 10px;
 }
 
+.play img {
+    opacity: 0;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 165px;
+}
 
+.card:hover {
+    background-color: #64636321;
+    transition: all 0.2s ease-out;
+}
 
-.invert {
-    filter: invert(1);
+.play img:hover {
+    top: 157px;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+}
+
+.signupbtn {
+    margin-right: 30px;
+    border: none;
+    outline: none;
+    background-color: #101010;
+    color: rgba(255, 255, 255, 0.681);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signupbtn:hover {
+    color: white;
+    font-size: 16.5px;
+    font-weight: bolder;
+    border-color: #101010;
+}
+
+.loginbtn {
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 30px;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    height: 50px;
+    width: 90px;
+}
+
+.loginbtn:hover {
+    height: 52px;
+    width: 92px;
+    font-weight: bolder;
+}
+
+.playbar {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 1px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: rgba(108, 165, 108, 0.578);
+    width: auto;
+    text-align: center;
+    padding: 16px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.previousSong {
+    cursor: pointer;
+}
+
+.playCurrentSong {
+    cursor: pointer;
+}
+
+.nextSong {
+    cursor: pointer;
+}
+
+.songList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songList ul {
+    padding: 0 20px;
+}
+
+.songList ul li {
+    width: 280px;
+    list-style-type: decimal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid white;
+    margin: 10px 0;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.playnow {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+}
+
+.playnow span {
+    width: 55px;
+    font-size: 13px;
+}
+.info div{
+    width: 83px;    
 }
