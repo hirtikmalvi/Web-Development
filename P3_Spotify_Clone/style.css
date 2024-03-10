@@ -38,12 +38,12 @@ body {
 }
 
 .heading {
-    width: 100%;
+    width: 80%;
     font-size: 13px;
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 23px 14px;
+    padding: 15px 19px;
     font-weight: bold;
 }
 
@@ -186,16 +186,18 @@ p {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    right: 1px;
+    right: 0px;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    background-color: rgba(108, 165, 108, 0.578);
+    background-color: rgba(45, 41, 41, 0.423);
+    /* background-color: rgba(108, 165, 108, 0.578); */
     width: auto;
+    height: 50px;
     text-align: center;
-    padding: 16px;
+    padding: 10px;
     font-size: 20px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     gap: 10px;
 }
@@ -212,19 +214,27 @@ p {
     cursor: pointer;
 }
 
-.songList{
+.songList {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.songList .info {
+    width: 344px;
+}
+
 .songList ul {
     padding: 0 20px;
+    overflow: auto;
+    height: 430px;
 }
+
 
 .songList ul li {
     width: 280px;
-    list-style-type: decimal;
+    list-style: none;
+    /* list-style-type: decimal; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -239,7 +249,7 @@ p {
 .playnow {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     /* flex-wrap: wrap; */
     cursor: pointer;
 }
@@ -248,6 +258,79 @@ p {
     width: 55px;
     font-size: 13px;
 }
-.info div{
-    width: 83px;    
+
+.info div {
+    width: 83px;
+}
+
+.prevCurrentNextCombine {
+    top: 5px;
+    position: absolute;
+    display: flex;
+    gap: 15px;
+
+}
+
+.seekbar {
+    position: absolute;
+    top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.seekLine {
+    position: relative;
+    width: 50vw;
+    /* top: 50px; */
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.192);
+    border-radius: 20px;
+}
+
+.seekLine2 {
+    position: absolute;
+    height: 4px;
+    left: 0px;
+    background-color: white;
+    border-radius: 20px;
+    /* transition: all 1s; */
+}
+
+.seekCircle {
+    position: absolute;
+    /* bottom: 10px; */
+    /* top: -10px; */
+    /* background-color: white; */
+    left: 0px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    transition: all 0.1s;
+}
+
+.seekLine:hover .seekLine2 {
+    background: #1ed760;
+}
+
+.seekbar:hover .seekLine2 {
+    background: #1ed760;
+}
+
+.songinfo {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
+.songtime {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.seekbar:hover .seekCircle {
+    background-color: white;
+    cursor: pointer;
 }
