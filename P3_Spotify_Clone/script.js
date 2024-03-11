@@ -81,11 +81,36 @@ async function main() {
     });
 
     currentSong.addEventListener("timeupdate", () => {
-        // console.log(currentSong.duration);
         document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`;
         document.querySelector(".seekCircle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
-        document.querySelector(".seekLine2").style.width = (currentSong.currentTime / currentSong.duration) * 50 + "vw";
+        // document.querySelector(".seekLine2").style.width = (currentSong.currentTime / currentSong.duration) * 100 + "%";
+    });
 
+    document.querySelector(".seekLine").addEventListener("click", (e) => {
+        let currentPosition = (e.offsetX / e.target.getBoundingClientRect().width);
+        document.querySelector(".seekCircle").style.left = (currentPosition * 100) + "%";
+        console.log(currentPosition);
+        // document.querySelector(".seekLine2").style.width = (currentPosition * 100) + "%";
+        currentSong.currentTime = currentSong.duration * currentPosition;
+    });
+
+    // [document.querySelector(".seekLine"), document.querySelector(".seekLine2")].forEach((element) => {
+    //     console.log(element);
+    //     element.addEventListener("click", (e) => {
+    //         let currentPosition = (e.offsetX / e.target.getBoundingClientRect().width);
+    //         document.querySelector(".seekCircle").style.left = (currentPosition * 100) + "%";
+    //         document.querySelector(".seekLine2").style.width = (currentPosition * 100) + "%";
+    //         currentSong.currentTime = currentSong.duration * currentPosition;
+    //     });
+    // });
+    
+    document.querySelector(".hamburger").addEventListener("click",()=>{
+        document.querySelector(".left").style.left = 0;
+        document.querySelector(".cross").style.display = "block";
+    });
+
+    document.querySelector(".cross").addEventListener("click",()=>{
+        document.querySelector(".left").style.left = -120 + "%";
     });
 
 }

@@ -14,16 +14,32 @@ body {
 }
 
 .left {
+    /* height: auto; */
     width: 25vw;
     padding: 10px;
-
 }
 
 .right {
     margin: 15px 0;
     margin-right: 10px;
     width: 75vw;
+    /* height: auto; */
     position: relative;
+
+}
+
+.home {
+    position: relative;
+}
+
+.cross {
+    height: 30px;
+    width: 30px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
 .home ul li {
@@ -74,12 +90,25 @@ body {
     width: 20px;
 }
 
+.hamburger {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    display: none;
+    cursor: pointer;
+}
+
 .header {
     height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #101010;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
 }
 
 /* Immediate children of header class(or any class) is denoted by "> *" */
@@ -90,6 +119,7 @@ body {
 .spotifyPlaylists {
     padding: 10px;
     background-color: rgba(33, 34, 33, 0.575);
+    /* position: relative; */
 }
 
 .spotifyPlaylists h1 {
@@ -184,20 +214,22 @@ p {
 
 .playbar {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    bottom: 0;
+    /* width: 75vw; */
+    left: 0;
+    right: 0;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
     background-color: rgba(45, 41, 41, 0.423);
     /* background-color: rgba(108, 165, 108, 0.578); */
     width: auto;
-    height: 50px;
+    min-height: 50px;
     text-align: center;
     padding: 10px;
     font-size: 20px;
-    display: flex;
-    /* align-items: center; */
+    /* display: flex; */
+    /* margin: 10px; */
+    align-items: center;
     justify-content: center;
     gap: 10px;
 }
@@ -264,14 +296,16 @@ p {
 }
 
 .prevCurrentNextCombine {
-    top: 5px;
-    position: absolute;
-    display: flex;
-    gap: 15px;
+    /* top: 5px; */
+    /* position: absolute; */
+    /* display: flex; */
+    gap: 10px;
+    height: 35px;
 
 }
 
 .seekbar {
+    /* min-height: 50px; */
     position: absolute;
     top: 55px;
     display: flex;
@@ -288,15 +322,19 @@ p {
     background-color: rgba(255, 255, 255, 0.192);
     border-radius: 20px;
 }
-
+.seekBarContainer{
+    display: flex;
+    justify-content: center;
+}
+/*
 .seekLine2 {
     position: absolute;
     height: 4px;
-    left: 0px;
+    left: 0%;
     background-color: white;
     border-radius: 20px;
-    /* transition: all 1s; */
-}
+    transition: all 0.1s;
+}*/
 
 .seekCircle {
     position: absolute;
@@ -333,4 +371,32 @@ p {
 .seekbar:hover .seekCircle {
     background-color: white;
     cursor: pointer;
+}
+
+.songInfoPlayTimeCombine{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: 35px;
+}
+
+@media (max-width:1400px) {
+    .left {
+        position: absolute;
+        left: -120%;
+        /* height: auto; */
+        width: 370px;
+        z-index: 1;
+        transition: all 0.5s ease-out;
+        background-color: black;
+    }
+
+    .right {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }
