@@ -8,6 +8,10 @@
     /* font-weight: 700; */
 }
 
+:root {
+    --a:0;
+}
+
 body {
     background-color: black;
     color: white;
@@ -32,7 +36,7 @@ body {
     position: relative;
 }
 
-.cross {
+.close {
     height: 30px;
     width: 30px;
     display: none;
@@ -155,24 +159,24 @@ p {
 }
 
 .play img {
-    opacity: 0;
+    opacity: var(--a);
     height: 55px;
     width: 55px;
     border-radius: 50%;
     position: absolute;
     right: 20px;
     top: 165px;
+    transition: all 0.3s ease-out;
 }
 
 .card:hover {
     background-color: #64636321;
     transition: all 0.2s ease-out;
+    --a:1;
 }
 
-.play img:hover {
+.card:hover img{
     top: 157px;
-    opacity: 1;
-    transition: all 0.2s ease-out;
 }
 
 .signupbtn {
@@ -298,7 +302,8 @@ p {
 .prevCurrentNextCombine {
     /* top: 5px; */
     /* position: absolute; */
-    /* display: flex; */
+    display: flex;
+    align-items: center;
     gap: 10px;
     height: 35px;
 
@@ -316,16 +321,18 @@ p {
 
 .seekLine {
     position: relative;
-    width: 50vw;
+    width: 40vw;
     /* top: 50px; */
     height: 4px;
     background-color: rgba(255, 255, 255, 0.192);
     border-radius: 20px;
 }
-.seekBarContainer{
+
+.seekBarContainer {
     display: flex;
     justify-content: center;
 }
+
 /*
 .seekLine2 {
     position: absolute;
@@ -359,13 +366,14 @@ p {
 .songinfo {
     position: absolute;
     left: 20px;
-    top: 10px;
+    width: auto;
+    /* top: 10px; */
 }
 
 .songtime {
     position: absolute;
     right: 20px;
-    top: 10px;
+    /* top: 10px; */
 }
 
 .seekbar:hover .seekCircle {
@@ -373,14 +381,34 @@ p {
     cursor: pointer;
 }
 
-.songInfoPlayTimeCombine{
+.songInfoPlayTimeCombine {
     display: flex;
     align-items: center;
-    justify-content:space-around;
-    height: 35px;
+    justify-content: space-around;
+    height: 31px;
 }
 
-@media (max-width:1400px) {
+.volumeBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: inherit;
+    left: 20px;
+    gap: 5px;
+}
+
+.volume {
+    cursor: pointer;
+}
+
+.volumeBar input[type=range] {
+    width: 120px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+@media (max-width:1200px) {
     .left {
         position: absolute;
         left: -120%;
@@ -394,9 +422,35 @@ p {
     .right {
         width: 100vw;
         height: 100vh;
+        margin: 0;
+    }
+
+    .close {
+        display: block;
     }
 
     .hamburger {
         display: block;
+    }
+
+    .cardContainer {
+        margin: 0;
+    }
+
+    .card {
+        width: 85vw;
+    }
+
+    .seekLine {
+        width: 30vw;
+    }
+
+    .volumeBar input[type=range] {
+        width: 70px;
+
+    }
+
+    .spotifyPlaylists h1 {
+        margin-bottom: 10px;
     }
 }
