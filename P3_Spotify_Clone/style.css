@@ -124,6 +124,7 @@ body {
     padding: 10px;
     background-color: rgba(33, 34, 33, 0.575);
     /* position: relative; */
+    height: 83vh;
 }
 
 .spotifyPlaylists h1 {
@@ -399,6 +400,11 @@ p {
 
 .volume {
     cursor: pointer;
+    display: block;
+}
+.mute{
+    cursor: pointer;
+    display: none;
 }
 
 .volumeBar input[type=range] {
