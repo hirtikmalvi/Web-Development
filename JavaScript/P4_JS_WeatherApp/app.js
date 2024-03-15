@@ -1,5 +1,5 @@
-let = BASE_URL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-let apiId = "cf1cfe2e28cf096dbbbf1e889d7643fe";
+let = BASE_URL = ""; //See on Local JS file
+let apiId = ""; //See on Local JS file
 let searchBtn = document.querySelector(".search button");
 let searchBox = document.querySelector(".search input");
 let weatehrIconList = ["clear", "drizzle", "humidity", "mist", "clouds", "rain", "snow"];
