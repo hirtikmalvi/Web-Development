@@ -1,0 +1,58 @@
+/* h1{
+    position: relative;
+    top: 50px;
+} */
+
+div {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(107, 231, 156);
+    border: 2px solid black;
+    display: inline-block;
+}
+
+#box1 {
+    position: static;
+    /* Following Properties does not work */
+    top: 96px;
+    bottom: 96px;
+    /* Left and Right */
+}
+
+#box2 {
+    position: relative;
+
+    top: 50px;
+    left: 20px;
+    background-color: chocolate;
+}
+
+/* here temp and box3 both combinely shows abosolute property. relative to its nearest parent. here temp was nearest parent of box3 so positioned relatively to the temp. */
+/* #temp{
+    background-color: brown;
+    height: 150px;
+    width: 200px;
+    position: relative;
+} */
+
+#box3 {
+    position: absolute;
+    background-color: aqua;
+    top: 100px;
+    left: 500px;
+}
+
+#box4 {
+    /* FIxed position on the browser. It is relative to browser height width. */
+    position: fixed;
+    background-color: pink;
+    left: 300px;
+    top: 300px;
+}
+
+#box5 {
+    /* As you scrolls the page goes up and when the box is found then according to top property when it becomes 0px to the top it becomes fixed means sticks to the top. By trying it you can get better understanding. */
+    position: sticky;
+    background-color: yellow;
+    top: 0px;
+}

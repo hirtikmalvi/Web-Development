@@ -1,0 +1,10 @@
+.number-input {
+  display: inline;
+  width: 32%;
+}
+
+.input-add-sub{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,21 @@
+p {
+    font-weight: 700;
+    font-size: 45px;
+}
+
+input {
+    width: 100%;
+}
+
+.todo-items-container {
+    text-align: left;
+}
+
+.new-row {
+    margin: 10px;
+}
+
+.new-button {
+    min-width: 70px;
+    border-radius: 5px;
+}

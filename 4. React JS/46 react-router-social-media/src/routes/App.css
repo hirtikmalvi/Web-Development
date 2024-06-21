@@ -1,0 +1,42 @@
+.app-container {
+  display: flex;
+}
+
+.content {
+  width: 100%;
+}
+
+.sidebar {
+  min-height: 100vmin;
+  max-width: 15%;
+}
+
+/* PostList */
+.postCard {
+  display: flex;
+  justify-content: center;
+  margin: 24px;
+  /* min-width: 50px; */
+  width: 50%;
+}
+
+.tags {
+  margin: 0 3px;
+  /* margin: 0px 3px 0 3px; */
+}
+
+.reactions {
+  margin: 10px 0 0 0;
+}
+
+.create-post {
+  margin: 10px;
+}
+
+.welcome-message {
+  margin: 50px;
+}
+
+.welcomeMessage {
+  margin: 10%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Rock Paper Scissor</h1>
+
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="images/rock.png">
+        </div>
+        <div class="choice" id="paper">
+            <img src="images/paper.png">
+        </div>
+        <div class="choice" id="scissor">
+            <img src="images/scissors.png">
+        </div>
+    </div>
+
+    <div class="scoreBoard">
+        <div class="score">
+            <p id="userScore">0</p>
+            <p class="typeOfUser">You</p>
+        </div>
+        <div class="score">
+            <p id="computerScore">0</p>
+            <p class="typeOfUser">Computer</p>
+        </div>
+    </div>
+
+    <div class="messageContainer">
+        <p id="message">Play Your Turn</p>
+        <p class="secondMessage hide">{Text written here will be replaced}</p>
+    </div>
+
+</body>
+<script src="app.js"></script>
+
+</html>

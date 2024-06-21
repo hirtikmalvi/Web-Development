@@ -1,0 +1,25 @@
+body {
+    background-color: #72e22d65;
+}
+
+.animationClass {
+    margin:auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 20px solid #34114f;
+    border-top: 20px solid #ef6c79;
+    /* background-color: skyblue; */
+    animation: spinAnimation 1s linear 1ms infinite normal;
+
+}
+
+@keyframes spinAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
