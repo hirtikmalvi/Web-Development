@@ -3,7 +3,7 @@ const http = require("http");
 const myServer = http.createServer((req, res) => {
   if (req) {
     if (req.url == "/favicon.ico") return; //To ignore '/favicon.ico'
-    console.log("Request Received");
+    console.log("Request Received", req);
     switch (req.url) {
       case "/":
         res.end("Home Page");

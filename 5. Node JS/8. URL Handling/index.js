@@ -5,7 +5,7 @@ const myServer = http.createServer((req, res) => {
   if (req) {
     if (req.url == "/favicon.ico") return; //To ignore '/favicon.ico'
     const reqUrl = url.parse(req.url, true);
-    console.log("Request Received with URL: ", reqUrl.pathname);
+    console.log("Request Received with URL: ", reqUrl);
     switch (reqUrl.pathname) {
       case "/":
         res.end("Home Page");
@@ -26,7 +26,6 @@ const myServer = http.createServer((req, res) => {
         res.end("404 Page Not Found");
     }
   }
-  // res.end("Hello from Node JS");
 });
 
 myServer.listen(434, () => {
