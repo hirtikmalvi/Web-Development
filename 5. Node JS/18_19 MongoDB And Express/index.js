@@ -72,7 +72,8 @@ app.get("/", (req, res) => {
   res.send("HOME PAGE");
 });
 
-//GET all users as HTML
+//GET all users as HTML 
+//READ OP
 app.get("/users", async (req, res) => {
   const dbUsers = await User.find({});
   const html = `
@@ -85,13 +86,15 @@ app.get("/users", async (req, res) => {
   return res.send(html);
 });
 
-//GET all users as API (List all users JSON)
+//GET all users as API (List all users JSON) 
+//READ OP
 app.get("/api/users", async (req, res) => {
   const dbUsers = await User.find({});
   return res.json(dbUsers);
 });
 
 //POST: Create New User
+//CREATE OP
 app.post("/api/users", async (req, res) => {
   const body = req.body;
   if (
@@ -117,18 +120,18 @@ app.post("/api/users", async (req, res) => {
 
 app
   .route("/api/users/:id")
-  //GET user with id as API (List user JSON)
+  //GET user with id as API (List user JSON) (READ Op)
   .get(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (!user) return res.status(404).json({ error: "User not found!" });
     return res.json(user);
   })
-  //PATCH: Edit the User with given Id
+  //PATCH: Edit the User with given Id (UPDATE OP)
   .patch(async (req, res) => {
     await User.findByIdAndUpdate(req.params.id, { lastName: "Malvi" });
     return res.json({ msg: "Updated Successfully" });
   })
-  //DELETE: Delete the User with given Id
+  //DELETE: Delete the User with given Id (DELETE Op)
   .delete(async(req, res) => {
     await User.findByIdAndDelete(req.params.id);
     return res.json({ msg: "Deleted Successfully" });
