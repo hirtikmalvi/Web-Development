@@ -1,7 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
-const PORT = 434;
+const PORT = process.env.PORT || 8000;
 const { connectMongoDB } = require("./connections");
 const URL = require("./models/url");
 const cookieParser = require("cookie-parser");
